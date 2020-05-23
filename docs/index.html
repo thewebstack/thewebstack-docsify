@@ -14,15 +14,26 @@
     window.$docsify = {
       name: 'The Web Stack',
       el: '#main',
+      search: 'auto',
       loadNavbar: true, // Navbar
       coverpage: false, // Cover
       loadSidebar: true, // Sidebar
       subMaxLevel: 3, // Sidebar Sub
-      
-      maxLevel: 3, // TOC
-      
+      search: {
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: [], // or 'auto'
+        placeholder: 'Type to search',
+        noData: 'No Results!',
+        depth: 2,
+        hideOtherSidebarContent: true, // whether or not to hide other sidebar content
+      },
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/_navbar.md': '/_navbar.md'
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 </body>
 </html>
